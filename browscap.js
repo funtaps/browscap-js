@@ -1,8 +1,9 @@
 "use strict";
+const path = require('path');
 
 module.exports = function Browscap (cacheDir) {
   if (typeof cacheDir === 'undefined') {
-    cacheDir = __dirname + '/node_modules/browscap-json-cache-files/sources/';
+    cacheDir = path.join(require.resolve('browscap-json-cache-files'), 'sources');
   }
 
   this.cacheDir = cacheDir;
